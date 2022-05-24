@@ -118,8 +118,7 @@ if (isset($_POST['submit'])) {
    $id = $_POST['id'];
    $view = $_POST['view'];
    
-   $wpdb->insert('wp_feedback', array('comments' => $comments, 'name' => $name, 'email' => $email, 'num' => $num, 'view' => $view, 'id' => $id));
-   echo " <script> alert('thank you for send us your feedback ') </script>";
+   $wpdb->insert('wp_feedback', array('comments' => $comments, 'name' => $name, 'email' => $email, 'num' => $num, 'view' => $view, 'page_id' => $id));
    header('refresh:0', 'Location: ' . $_SERVER['HTTP_REFERER']);
    exit();
 }
